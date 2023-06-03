@@ -1,0 +1,15 @@
+<div>
+    <form action="post" autocomplete="off" method="POST">
+        <div>
+            <input [(ngModel)]="credentials.login" type="text" name="username" placeholder="nazwa użytkownika" title="Login">
+        </div>
+
+        <div>
+            <input [(ngModel)]="credentials.password" type="password" name="password" placeholder="hasło" title="Password">
+        </div>
+
+        <div>
+            <button (click)="signIn()" type="submit" title="Zaloguj się">Sign In</button>
+        </div>
+    </form>
+</div>

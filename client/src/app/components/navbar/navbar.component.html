@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <a href="/">Home</a>
+    </div>
+    <div>
+        <a href="videos">Videos</a>
+    </div>
+    <div>
+        <a href="login" *ngIf="!authService.isLoggedIn()">Login</a>
+    </div>
+    <div>
+        <a href="signup" *ngIf="!authService.isLoggedIn()">SignUp</a>
+    </div>
+    <div>
+        <button *ngIf="authService.isLoggedIn()" (click)="signOut()"></button>
+    </div>
+</div>

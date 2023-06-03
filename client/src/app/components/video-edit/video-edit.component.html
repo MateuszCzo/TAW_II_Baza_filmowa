@@ -1,0 +1,19 @@
+<div>
+    <form action="post" autocomplete="off" method="POST">
+        <div>
+            <input [(ngModel)]="credentials.image" type="text" name="image" placeholder="zdjecie" title="Image">
+        </div>
+
+        <div>
+            <input [(ngModel)]="credentials.name" type="text" name="name" placeholder="nazwa" title="Name">
+        </div>
+
+        <div>
+            <input [(ngModel)]="credentials.description" type="text" name="description" placeholder="opis" title="Description">
+        </div>
+
+        <div>
+            <button (click)="save()" type="submit" title="Zapisz Zmiany">Save Changes</button>
+        </div>
+    </form>
+</div>
