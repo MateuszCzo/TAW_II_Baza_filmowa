@@ -11,7 +11,7 @@ export class BigLettersPipe implements PipeTransform {
     let values = value.split(' ');
 
     for(let i = 0; i < values.length; i++) {
-      values[i] = values[i].charAt(0).toUpperCase() + values[i].toLocaleLowerCase();
+      values[i] = values[i].charAt(0).toUpperCase() + values[i].slice(1).toLocaleLowerCase();
     }
 
     return values.join(' ');

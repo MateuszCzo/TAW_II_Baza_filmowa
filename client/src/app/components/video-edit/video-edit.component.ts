@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class VideoEditComponent implements OnInit {
     description: ''
   }
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) {
+  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -34,6 +34,11 @@ export class VideoEditComponent implements OnInit {
   }
 
   save() {
-    this.dataService.update(this.id, this.credentials);
+    console.log(this.id, this.credentials);
+    this.dataService.update(this.id, this.credentials)
+      .subscribe(response => {
+        console.log(response);
+      });
+    this.router.navigate(["/videos"]);
   }
 }

@@ -21,9 +21,9 @@ export class VideoDetalisComponent implements OnInit {
       id = params.get('id');
     });
     this.dataService.getById(id).subscribe((result: any) => {
-      this.image = result['image'];
-      this.name = result['name'];
-      this.description = result['description'];
+      this.image = result.film['image'];
+      this.name = result.film['name'];
+      this.description = result.film['description'];
     });
   }
 }

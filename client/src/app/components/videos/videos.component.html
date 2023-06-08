@@ -1,9 +1,12 @@
 <div>
-    <div *ngFor="let item of items$">
+    <div>
+        <p>Videos home</p>
+    </div>
+    <div *ngFor="let item of items">
         <img [src]="item.image" alt="image">
         <p>{{ item.name | bigLetters }}</p>
-        <a [routerLink]="['videos/details/' + item.id]">More datails</a>
-        <a [routerLink]="['videos/edit/' + item.id]">Edit video</a>
-        <button (click)="delete(item.id)">Remove</button>
+        <a [routerLink]="['details/' + item._id]">More datails</a>
+        <a *ngIf="authService.isLoggedIn()" [routerLink]="['edit/' + item._id]">Edit video</a>
+        <button *ngIf="authService.isLoggedIn()" (click)="deleteVideo(item._id)">Remove</button>
     </div>
 </div>

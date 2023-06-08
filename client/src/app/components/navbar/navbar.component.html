@@ -6,12 +6,15 @@
         <a href="videos">Videos</a>
     </div>
     <div>
+        <a href="videos/add" *ngIf="authService.isLoggedIn()">Add Videos</a>
+    </div>
+    <div>
         <a href="login" *ngIf="!authService.isLoggedIn()">Login</a>
     </div>
     <div>
         <a href="signup" *ngIf="!authService.isLoggedIn()">SignUp</a>
     </div>
     <div>
-        <button *ngIf="authService.isLoggedIn()" (click)="signOut()"></button>
+        <button *ngIf="authService.isLoggedIn()" (click)="signOut()">Logout</button>
     </div>
 </div>

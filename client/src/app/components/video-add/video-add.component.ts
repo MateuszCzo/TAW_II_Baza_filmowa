@@ -22,6 +22,6 @@ export class VideoAddComponent {
       .subscribe(result => {
         return result;
       });
-    this.router.navigate(['/']);
+    this.router.navigate(['/videos']);
   }
 }

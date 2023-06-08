@@ -8,11 +8,11 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './videos.component.html',
   styleUrls: ['./videos.component.css']
 })
-export class VideosComponent implements OnInit {
+export class VideosComponent implements OnInit  {
 
-  public items$: any;
+  public items: any[] = [];
 
-  constructor(public dataService: DataService, public authService: AuthService) {
+  constructor(public dataService: DataService, public authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -22,13 +22,15 @@ export class VideosComponent implements OnInit {
   getAll() {
     this.dataService.getAll()
       .subscribe(response => {
-        this.items$ = response;
+        this.items = response.films;
       });
   }
 
-  delete(id: string) {
+  deleteVideo(id: string) {
     if(!this.authService.isLoggedIn()) return;
-    this.dataService.delete(id);
-    this.getAll();
+    this.dataService.delete(id)
+      .subscribe(result => {
+        this.getAll();
+      });
   }
 }

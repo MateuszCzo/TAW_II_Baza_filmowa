@@ -7,6 +7,7 @@ import { VideosComponent } from './components/videos/videos.component';
 import { VideoAddComponent } from './components/video-add/video-add.component';
 import { AuthGuard } from './services/auth.guard';
 import { VideoEditComponent } from './components/video-edit/video-edit.component';
+import { VideoDetalisComponent } from './components/video-detalis/video-detalis.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
 	  path: 'videos/details/:id',
-	  component: VideosComponent,
+	  component: VideoDetalisComponent,
   },
   {
 	  path: 'videos/add',

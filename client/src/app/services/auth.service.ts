@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { map } from 'rxjs/operators';
 import { Token } from "../models/token";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,13 @@ export class AuthService {
 
   private url = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   //logowanie i zapisanie tokena do lacal storage
   authenticate(credentials: any) {
-    return this.http.post(this.url + 'user/auth', {
-      login: credentials.login,
+    return this.http.post(this.url + '/user/login', {
+      email: credentials.email,
       password: credentials.password
     })
     .pipe(
@@ -34,13 +35,17 @@ export class AuthService {
   //tworzenie nowego uzytkownika
   create(credentials: any) {
     console.log(credentials)
-    return this.http.post(this.url + '/user/create', credentials);
+    return this.http.post(this.url + '/user/register', credentials);
   }
 
   //logout
   logout() {
+    /*
     return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
       .pipe(map(() => { localStorage.removeItem('token'); }));
+    */
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 
   //pobieranie tokenu

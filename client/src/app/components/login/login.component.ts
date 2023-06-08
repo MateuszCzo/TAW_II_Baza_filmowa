@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
   public credentials = {
-    login: '',
+    email: '',
     password: ''
   }
 
@@ -26,7 +26,7 @@ export class LoginComponent {
         else {
           this.loggout = false;
           this.credentials = {
-            login: '',
+            email: '',
             password: ''
           };
           this.router.navigate(['/']);

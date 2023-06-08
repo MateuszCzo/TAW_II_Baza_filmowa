@@ -22,6 +22,6 @@ export class SignupComponent {
       .subscribe(result => {
         return result;
       });
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }

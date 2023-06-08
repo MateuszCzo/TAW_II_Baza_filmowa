@@ -13,10 +13,6 @@ export class NavbarComponent {
   }
 
   signOut() {
-    this.authService.logout()
-      .subscribe(result => {
-        this.router.navigate(['/']);
-        return result;
-      });
+    this.authService.logout();
   }
 }
