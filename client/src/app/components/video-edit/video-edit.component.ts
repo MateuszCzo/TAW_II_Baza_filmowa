@@ -17,6 +17,8 @@ export class VideoEditComponent implements OnInit {
     description: ''
   }
 
+  public error = '';
+
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {
   }
 
@@ -30,6 +32,9 @@ export class VideoEditComponent implements OnInit {
         name: result.film['name'],
         description: result.film['description']
       }
+    },
+    error => {
+      this.error = error.error.error;
     });
   }
 
@@ -37,8 +42,10 @@ export class VideoEditComponent implements OnInit {
     console.log(this.id, this.credentials);
     this.dataService.update(this.id, this.credentials)
       .subscribe(response => {
-        console.log(response);
+        this.router.navigate(["/videos"]);
+      },
+      error => {
+        this.error = error.error.error;
       });
-    this.router.navigate(["/videos"]);
   }
 }

@@ -3,6 +3,7 @@
         <p class="page-info-text">Register page.</p>
     </div>
     <form class="signup-form" action="post" autocomplete="off" method="POST">
+        <p class="error">{{ error }}</p>
         <div class="signup-form-input">
             <input class="signup-form-username" [(ngModel)]="credentials.name" type="text" name="username" placeholder="nazwa użytkownika" title="Login">
         </div>

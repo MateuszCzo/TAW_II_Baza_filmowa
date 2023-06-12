@@ -12,6 +12,8 @@ export class VideoDetalisComponent implements OnInit {
   public name: string = '';
   public description: string = '';
 
+  public error = '';
+
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
 
@@ -24,6 +26,9 @@ export class VideoDetalisComponent implements OnInit {
       this.image = result.film['image'];
       this.name = result.film['name'];
       this.description = result.film['description'];
+    },
+    error => {
+      this.error = error.error.error;
     });
   }
 }

@@ -2,6 +2,7 @@
     <div class="page-info">
         <p class="page-info-text">Videos page.</p>
     </div>
+    <p class="error">{{ error }}</p>
     <div class="videos-container">
         <div class="video-page" *ngFor="let item of items">
             <img class="video-image" [src]="item.image" alt="image">

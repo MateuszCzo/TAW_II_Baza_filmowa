@@ -12,6 +12,8 @@ export class VideosComponent implements OnInit  {
 
   public items: any[] = [];
 
+  public error = '';
+
   constructor(public dataService: DataService, public authService: AuthService, private router: Router) {
   }
 
@@ -23,6 +25,9 @@ export class VideosComponent implements OnInit  {
     this.dataService.getAll()
       .subscribe(response => {
         this.items = response.films;
+      },
+      error => {
+        this.error = error.error.error;
       });
   }
 
@@ -31,6 +36,9 @@ export class VideosComponent implements OnInit  {
     this.dataService.delete(id)
       .subscribe(result => {
         this.getAll();
+      },
+      error => {
+        this.error = error.error.error;
       });
   }
 }

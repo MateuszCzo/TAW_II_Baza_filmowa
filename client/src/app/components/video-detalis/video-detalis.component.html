@@ -2,7 +2,8 @@
     <div class="page-info">
         <p class="page-info-text">Video-details page.</p>
     </div>
-    <div class="video-details-params">
+    <p>{{ error }}</p>
+    <div *ngIf="!error" class="video-details-params">
         <img class="video-details-image" [src]="image" alt="image">
         <p class="video-details-name">{{ name }}</p>
         <p class="video-details-description" appTextFormat>{{ description }}</p>

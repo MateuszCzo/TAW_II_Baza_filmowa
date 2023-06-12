@@ -3,6 +3,7 @@
         <p class="page-info-text">Video-add page.</p>
     </div>
     <form class="video-add-form" action="post" autocomplete="off" method="POST">
+        <p class="error">{{ error }}</p>
         <div class="video-add-form-input">
             <input class="video-add-form-image" [(ngModel)]="credentials.image" type="text" name="image" placeholder="zdjecie" title="Image">
         </div>

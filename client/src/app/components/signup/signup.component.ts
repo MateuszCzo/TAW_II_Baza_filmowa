@@ -14,14 +14,19 @@ export class SignupComponent {
     password: ''
   }
 
+  public error = '';
+
   constructor(public authService: AuthService, private router: Router) {
   }
 
   create() {
     this.authService.create(this.credentials)
       .subscribe(result => {
-        return result;
+        this.error = '';
+        this.router.navigate(['/']);
+      },
+      error => {
+        this.error = error.error.error;
       });
-    this.router.navigate(['/']);
   }
 }

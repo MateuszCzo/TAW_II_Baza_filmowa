@@ -3,6 +3,7 @@
         <p class="page-info-text">Login page.</p>
     </div>
     <form class="login-form" action="post" autocomplete="off" method="POST">
+        <p class="error">{{ error }}</p>
         <div class="login-form-input">
             <input class="login-form-email" [(ngModel)]="credentials.email" type="text" name="email" placeholder="Email" title="Email">
         </div>

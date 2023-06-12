@@ -14,14 +14,18 @@ export class VideoAddComponent {
     description: ''
   }
 
+  public error = '';
+
   constructor(private dataService: DataService, private router: Router) {
   }
 
   add() {
     this.dataService.create(this.credentials)
       .subscribe(result => {
-        return result;
+        this.router.navigate(['/videos']);
+      },
+      error => {
+        this.error = error.error.error;
       });
-    this.router.navigate(['/videos']);
   }
 }

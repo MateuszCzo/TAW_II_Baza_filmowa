@@ -11,7 +11,9 @@ export class LoginComponent {
   public credentials = {
     email: '',
     password: ''
-  }
+  };
+
+  public error = '';
 
   public logged?: boolean;
   public loggout?: boolean;
@@ -25,12 +27,16 @@ export class LoginComponent {
         if(!result) this.logged = false;
         else {
           this.loggout = false;
+          this.error = '';
           this.credentials = {
             email: '',
             password: ''
           };
           this.router.navigate(['/']);
         }
+      },
+      error => {
+        this.error = error.error.error;
       })
   }
 }
