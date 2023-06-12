@@ -1,15 +1,18 @@
-<div>
-    <form action="post" autocomplete="off" method="POST">
-        <div>
-            <input [(ngModel)]="credentials.email" type="text" name="email" placeholder="Email" title="Email">
+<div class="login">
+    <div class="page-info">
+        <p class="page-info-text">Login page.</p>
+    </div>
+    <form class="login-form" action="post" autocomplete="off" method="POST">
+        <div class="login-form-input">
+            <input class="login-form-email" [(ngModel)]="credentials.email" type="text" name="email" placeholder="Email" title="Email">
         </div>
 
-        <div>
-            <input [(ngModel)]="credentials.password" type="password" name="password" placeholder="hasło" title="Password">
+        <div class="login-form-input">
+            <input class="login-form-password" [(ngModel)]="credentials.password" type="password" name="password" placeholder="hasło" title="Password">
         </div>
 
-        <div>
-            <button (click)="signIn()" type="submit" title="Zaloguj się">Sign In</button>
+        <div class="login-form-input">
+            <button class="login-form-submit" (click)="signIn()" type="submit" title="Zaloguj się">Sign In</button>
         </div>
     </form>
 </div>

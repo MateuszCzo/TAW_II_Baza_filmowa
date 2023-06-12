@@ -1,22 +1,22 @@
-<div>
-    <div>
-        <p>Videos edit</p>
+<div class="video-edit">
+    <div class="page-info">
+        <p class="page-info-text">Video-edit page.</p>
     </div>
-    <form action="post" autocomplete="off" method="POST">
-        <div>
-            <input [(ngModel)]="credentials.image" type="text" name="image" placeholder="zdjecie" title="Image">
+    <form class="video-edit-form" action="post" autocomplete="off" method="POST">
+        <div class="video-edit-form-input">
+            <input class="video-edit-form-image" [(ngModel)]="credentials.image" type="text" name="image" placeholder="zdjecie" title="Image">
         </div>
 
-        <div>
-            <input [(ngModel)]="credentials.name" type="text" name="name" placeholder="nazwa" title="Name">
+        <div class="video-edit-form-input">
+            <input class="video-edit-form-name" [(ngModel)]="credentials.name" type="text" name="name" placeholder="nazwa" title="Name">
         </div>
 
-        <div>
-            <input [(ngModel)]="credentials.description" type="text" name="description" placeholder="opis" title="Description">
+        <div class="video-edit-form-input">
+            <textarea class="video-edit-form-description" [(ngModel)]="credentials.description" type="text" name="description" placeholder="opis" title="Description"></textarea>
         </div>
 
-        <div>
-            <button (click)="save()" type="submit" title="Zapisz Zmiany">Save Changes</button>
+        <div class="video-edit-form-input">
+            <button class="video-edit-form-submit" (click)="save()" type="submit" title="Zapisz Zmiany">Save Changes</button>
         </div>
     </form>
 </div>

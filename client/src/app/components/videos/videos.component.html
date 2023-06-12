@@ -1,12 +1,14 @@
-<div>
-    <div>
-        <p>Videos home</p>
+<div class="videos">
+    <div class="page-info">
+        <p class="page-info-text">Videos page.</p>
     </div>
-    <div *ngFor="let item of items">
-        <img [src]="item.image" alt="image">
-        <p>{{ item.name | bigLetters }}</p>
-        <a [routerLink]="['details/' + item._id]">More datails</a>
-        <a *ngIf="authService.isLoggedIn()" [routerLink]="['edit/' + item._id]">Edit video</a>
-        <button *ngIf="authService.isLoggedIn()" (click)="deleteVideo(item._id)">Remove</button>
+    <div class="videos-container">
+        <div class="video-page" *ngFor="let item of items">
+            <img class="video-image" [src]="item.image" alt="image">
+            <p class="video-name">{{ item.name | bigLetters }}</p>
+            <a class="video-details-page" [routerLink]="['details/' + item._id]">More datails</a>
+            <a class="video-edit-page" *ngIf="authService.isLoggedIn()" [routerLink]="['edit/' + item._id]">Edit video</a>
+            <button class="video-remove-button" *ngIf="authService.isLoggedIn()" (click)="deleteVideo(item._id)">Remove</button>
+        </div>
     </div>
 </div>

@@ -1,19 +1,22 @@
-<div>
-    <form action="post" autocomplete="off" method="POST">
-        <div>
-            <input [(ngModel)]="credentials.name" type="text" name="username" placeholder="nazwa użytkownika" title="Login">
+<div class="signup">
+    <div class="page-info">
+        <p class="page-info-text">Register page.</p>
+    </div>
+    <form class="signup-form" action="post" autocomplete="off" method="POST">
+        <div class="signup-form-input">
+            <input class="signup-form-username" [(ngModel)]="credentials.name" type="text" name="username" placeholder="nazwa użytkownika" title="Login">
         </div>
 
-        <div>
-            <input [(ngModel)]="credentials.password" type="password" name="password" placeholder="hasło" title="Password">
+        <div class="signup-form-input">
+            <input class="signup-form-password" [(ngModel)]="credentials.password" type="password" name="password" placeholder="hasło" title="Password">
         </div>
 
-        <div>
-            <input [(ngModel)]="credentials.email" type="text" name="email" placeholder="email" title="Email">
+        <div class="signup-form-input">
+            <input class="signup-form-email" [(ngModel)]="credentials.email" type="text" name="email" placeholder="email" title="Email">
         </div>
 
-        <div>
-            <button (click)="create()" type="submit" title="Zaloguj się">Create Account</button>
+        <div class="signup-form-input">
+            <button class="signup-form-submit" (click)="create()" type="submit" title="Zaloguj się">Create Account</button>
         </div>
     </form>
 </div>

@@ -1,20 +1,20 @@
-<div>
-    <div>
-        <a href="/">Home</a>
+<div class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-link" href="/">Home</a>
     </div>
-    <div>
-        <a href="videos">Videos</a>
+    <div class="navbar-container">
+        <a class="navbar-link" href="videos">Videos</a>
     </div>
-    <div>
-        <a href="videos/add" *ngIf="authService.isLoggedIn()">Add Videos</a>
+    <div class="navbar-container" *ngIf="authService.isLoggedIn()">
+        <a class="navbar-link" href="videos/add">Add Videos</a>
     </div>
-    <div>
-        <a href="login" *ngIf="!authService.isLoggedIn()">Login</a>
+    <div class="navbar-container" *ngIf="!authService.isLoggedIn()">
+        <a class="navbar-link" href="login">Login</a>
     </div>
-    <div>
-        <a href="signup" *ngIf="!authService.isLoggedIn()">SignUp</a>
+    <div class="navbar-container" *ngIf="!authService.isLoggedIn()">
+        <a class="navbar-link" href="signup">SignUp</a>
     </div>
-    <div>
-        <button *ngIf="authService.isLoggedIn()" (click)="signOut()">Logout</button>
+    <div class="navbar-container" *ngIf="authService.isLoggedIn()">
+        <button class="navbar-button" (click)="signOut()">Logout</button>
     </div>
 </div>

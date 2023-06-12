@@ -1,0 +1,60 @@
+.videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-info-text {
+    font-size: 20px;
+    color: #333;
+}
+
+.videos-container {
+    margin-top: 20px;
+}
+
+.video-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.video-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.video-name {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.video-details-page,
+.video-edit-page,
+.video-remove-button {
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.video-details-page {
+    background-color: #333;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.video-edit-page,
+.video-remove-button {
+    background-color: #f2f2f2;
+    color: #333;
+    margin-top: 5px;
+}
+
+.video-edit-page:hover,
+.video-remove-button:hover {
+    background-color: #ccc;
+}

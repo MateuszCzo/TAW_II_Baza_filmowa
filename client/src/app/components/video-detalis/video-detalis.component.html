@@ -1,8 +1,10 @@
-<div>
-    <div>
-        <p>Videos details</p>
+<div class="video-details">
+    <div class="page-info">
+        <p class="page-info-text">Video-details page.</p>
     </div>
-    <img [src]="image" alt="image">
-    <p>{{ name }}</p>
-    <p appTextFormat>{{ description }}</p>
+    <div class="video-details-params">
+        <img class="video-details-image" [src]="image" alt="image">
+        <p class="video-details-name">{{ name }}</p>
+        <p class="video-details-description" appTextFormat>{{ description }}</p>
+    </div>
 </div>

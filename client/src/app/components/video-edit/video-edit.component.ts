@@ -26,9 +26,9 @@ export class VideoEditComponent implements OnInit {
     });
     this.dataService.getById(this.id).subscribe((result: any) => {
       this.credentials = {
-        image: result['image'],
-        name: result['name'],
-        description: result['description']
+        image: result.film['image'],
+        name: result.film['name'],
+        description: result.film['description']
       }
     });
   }

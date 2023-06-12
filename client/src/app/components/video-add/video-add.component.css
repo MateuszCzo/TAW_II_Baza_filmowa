@@ -1,0 +1,37 @@
+.video-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-add-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-add-form-input {
+    margin-bottom: 10px;
+}
+
+.video-add-form-image,
+.video-add-form-name {
+    padding: 5px;
+    width: 200px;
+}
+
+.video-add-form-description {
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+}
+
+.video-add-form-submit {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
