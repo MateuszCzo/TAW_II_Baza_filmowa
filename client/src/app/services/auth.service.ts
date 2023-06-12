@@ -34,13 +34,21 @@ export class AuthService {
 
   //tworzenie nowego uzytkownika
   create(credentials: any) {
-    return this.http.post(this.url + '/user/register', credentials);
+    return this.http.post(this.url + '/user/register', credentials)
+    .pipe(
+      map((result: Token | any) => {
+        if (result && result.token) {
+          localStorage.setItem('token', result.token);
+          return true;
+        }
+      return false;
+      })
+    );
   }
 
   //logout
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/']);
   }
 
   //pobieranie uzytkownika
