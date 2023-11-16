@@ -5,7 +5,7 @@
     <div class="navbar-container">
         <a class="navbar-link" href="videos">Videos</a>
     </div>
-    <div class="navbar-container" *ngIf="authService.isLoggedIn()">
+    <div class="navbar-container" *ngIf="authService.isLoggedIn() && authService.isAdmin()">
         <a class="navbar-link" href="videos/add">Add Videos</a>
     </div>
     <div class="navbar-container" *ngIf="!authService.isLoggedIn()">

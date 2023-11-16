@@ -8,8 +8,8 @@
             <img class="video-image" [src]="item.image" alt="image">
             <p class="video-name">{{ item.name | bigLetters }}</p>
             <a class="video-details-page" [routerLink]="['details/' + item._id]">More datails</a>
-            <a class="video-edit-page" *ngIf="authService.isLoggedIn()" [routerLink]="['edit/' + item._id]">Edit video</a>
-            <button class="video-remove-button" *ngIf="authService.isLoggedIn()" (click)="deleteVideo(item._id)">Remove</button>
+            <a class="video-edit-page" *ngIf="authService.isLoggedIn() && authService.isAdmin()" [routerLink]="['edit/' + item._id]">Edit video</a>
+            <button class="video-remove-button" *ngIf="authService.isLoggedIn() && authService.isAdmin()" (click)="deleteVideo(item._id)">Remove</button>
         </div>
     </div>
 </div>

@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private url = 'http://localhost:3000/api';
+  private url = 'http://localhost:3000/api/user/';
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   //logowanie i zapisanie tokena do lacal storage
   authenticate(credentials: any) {
-    return this.http.post(this.url + '/user/login', {
+    return this.http.post(this.url + 'login', {
       email: credentials.email,
       password: credentials.password
     })
@@ -34,7 +34,7 @@ export class AuthService {
 
   //tworzenie nowego uzytkownika
   create(credentials: any) {
-    return this.http.post(this.url + '/user/register', credentials)
+    return this.http.post(this.url + 'register', credentials)
     .pipe(
       map((result: Token | any) => {
         if (result && result.token) {
@@ -68,6 +68,21 @@ export class AuthService {
     const token = localStorage.getItem('token');
     if(!token) return false;
     return !(jwtHelperService.isTokenExpired(token));
+  }
+
+  isAdmin() {
+    const token = this.getToken();
+    if (!token) return false;
+    const decodedToken = new JwtHelperService().decodeToken(token);
+    return decodedToken && decodedToken.role === 'admin';
+  }
+
+  getUserName() {
+    const token = this.getToken();
+    if (!token) return false;
+    const decodedToken = new JwtHelperService().decodeToken(token);
+    if (!decodedToken || !decodedToken.name) return false;
+    return decodedToken.name ;
   }
 
 }

@@ -7,5 +7,20 @@
         <img class="video-details-image" [src]="image" alt="image">
         <p class="video-details-name">{{ name }}</p>
         <p class="video-details-description" appTextFormat>{{ description }}</p>
+        <div class="rating">
+            <div class="film-rating">
+                <span>{{ filmRating }}</span>
+            </div>
+            <div *ngIf="authService.isLoggedIn()" class="user-rating">
+                <span 
+                    *ngFor="let number of [1,2,3,4,5]" 
+                    class="fa fa-star" 
+                    [ngClass]="{'checked': number <= hoveredStar}"
+                    (mouseover)="onStarMouseOver(number)"
+                    (mouseout)="onStarMouseOut()"
+                    (click)="onStarClick(number)">
+                </span>
+            </div>
+        </div>
     </div>
 </div>
